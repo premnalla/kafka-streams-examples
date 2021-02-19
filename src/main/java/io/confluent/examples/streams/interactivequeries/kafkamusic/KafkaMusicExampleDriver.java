@@ -110,15 +110,10 @@ public class KafkaMusicExampleDriver {
     props.put(CommonClientConfigs.SECURITY_PROTOCOL_CONFIG, "SSL");
     props.put(SslConfigs.SSL_TRUSTSTORE_LOCATION_CONFIG, sslTrustStoreLocation);
     props.put(SslConfigs.SSL_TRUSTSTORE_PASSWORD_CONFIG, sslPw);
-    // props.put(SslConfigs.SSL_TRUSTSTORE_LOCATION_CONFIG, "/Users/prem_aiven/Downloads/kafka-customer-demo/client.truststore.jks");
-    // props.put(SslConfigs.SSL_TRUSTSTORE_PASSWORD_CONFIG, "secret");
     props.put(SslConfigs.SSL_KEYSTORE_TYPE_CONFIG, "PKCS12");
     props.put(SslConfigs.SSL_KEYSTORE_LOCATION_CONFIG, sslKeyStoreLocation);
     props.put(SslConfigs.SSL_KEYSTORE_PASSWORD_CONFIG, sslPw);
     props.put(SslConfigs.SSL_KEY_PASSWORD_CONFIG, sslPw);
-    // props.put(SslConfigs.SSL_KEYSTORE_LOCATION_CONFIG, "/Users/prem_aiven/Downloads/kafka-customer-demo/client.keystore.p12");
-    // props.put(SslConfigs.SSL_KEYSTORE_PASSWORD_CONFIG, "secret");
-    // props.put(SslConfigs.SSL_KEY_PASSWORD_CONFIG, "secret");
     // Prem (end)
 
     // Prem (begin)
@@ -126,8 +121,6 @@ public class KafkaMusicExampleDriver {
     serdeConfig.put(AbstractKafkaSchemaSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG, schemaRegistryUrl);
     serdeConfig.put(AbstractKafkaSchemaSerDeConfig.BASIC_AUTH_CREDENTIALS_SOURCE, basicAuthCredSource);
     serdeConfig.put(AbstractKafkaSchemaSerDeConfig.USER_INFO_CONFIG, basicAuthUserInfo);
-    // serdeConfig.put(AbstractKafkaSchemaSerDeConfig.BASIC_AUTH_CREDENTIALS_SOURCE, "USER_INFO");
-    // serdeConfig.put(AbstractKafkaSchemaSerDeConfig.USER_INFO_CONFIG, "avnadmin:y3de1yei483vrhsv");
     // Prem (end)
 
     final SpecificAvroSerializer<PlayEvent> playEventSerializer = new SpecificAvroSerializer<>();

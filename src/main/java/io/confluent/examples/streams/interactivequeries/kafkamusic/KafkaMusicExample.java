@@ -199,8 +199,6 @@ public class KafkaMusicExample {
   // Prem (begin)
   private static final String DEFAULT_BOOTSTRAP_SERVERS = kafkaBootStrap;
   private static final String DEFAULT_SCHEMA_REGISTRY_URL = schemaRegUrl;
-  // private static final String DEFAULT_BOOTSTRAP_SERVERS = "kafka-customer-demo-exercise1.aivencloud.com:17295";
-  // private static final String DEFAULT_SCHEMA_REGISTRY_URL = "https://kafka-customer-demo-exercise1.aivencloud.com:17298";
   // Prem (end)
 
   public static void main(final String[] args) throws Exception {
@@ -229,8 +227,6 @@ public class KafkaMusicExample {
     serdeConfig.put(AbstractKafkaSchemaSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG, schemaRegistryUrl);
     serdeConfig.put(AbstractKafkaSchemaSerDeConfig.BASIC_AUTH_CREDENTIALS_SOURCE, basicAuthCredSource);
     serdeConfig.put(AbstractKafkaSchemaSerDeConfig.USER_INFO_CONFIG, basicAuthUserInfo);
-    // serdeConfig.put(AbstractKafkaSchemaSerDeConfig.BASIC_AUTH_CREDENTIALS_SOURCE, "USER_INFO");
-    // serdeConfig.put(AbstractKafkaSchemaSerDeConfig.USER_INFO_CONFIG, "avnadmin:y3de1yei483vrhsv");
     // Prem (end)
 
     final KafkaStreams streams = new KafkaStreams(
@@ -295,15 +291,10 @@ public class KafkaMusicExample {
     streamsConfiguration.put(CommonClientConfigs.SECURITY_PROTOCOL_CONFIG, "SSL");
     streamsConfiguration.put(SslConfigs.SSL_TRUSTSTORE_LOCATION_CONFIG, sslTrustStoreLocation);
     streamsConfiguration.put(SslConfigs.SSL_TRUSTSTORE_PASSWORD_CONFIG, sslPw);
-    // streamsConfiguration.put(SslConfigs.SSL_TRUSTSTORE_LOCATION_CONFIG, "/Users/prem_aiven/Downloads/kafka-customer-demo/client.truststore.jks");
-    // streamsConfiguration.put(SslConfigs.SSL_TRUSTSTORE_PASSWORD_CONFIG, "secret");
     streamsConfiguration.put(SslConfigs.SSL_KEYSTORE_TYPE_CONFIG, "PKCS12");
     streamsConfiguration.put(SslConfigs.SSL_KEYSTORE_LOCATION_CONFIG, sslKeyStoreLocation);
     streamsConfiguration.put(SslConfigs.SSL_KEYSTORE_PASSWORD_CONFIG, sslPw);
     streamsConfiguration.put(SslConfigs.SSL_KEY_PASSWORD_CONFIG, sslPw);
-    // streamsConfiguration.put(SslConfigs.SSL_KEYSTORE_LOCATION_CONFIG, "/Users/prem_aiven/Downloads/kafka-customer-demo/client.keystore.p12");
-    // streamsConfiguration.put(SslConfigs.SSL_KEYSTORE_PASSWORD_CONFIG, "secret");
-    // streamsConfiguration.put(SslConfigs.SSL_KEY_PASSWORD_CONFIG, "secret");
     // Prem (end)
     
     // Provide the details of our embedded http service that we'll use to connect to this streams
