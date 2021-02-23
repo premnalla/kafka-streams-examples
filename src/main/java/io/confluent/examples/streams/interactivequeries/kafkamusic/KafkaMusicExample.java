@@ -286,6 +286,10 @@ public class KafkaMusicExample {
     streamsConfiguration.put(StreamsConfig.APPLICATION_ID_CONFIG, "kafka-music-charts");
     // Where to find Kafka broker(s).
     streamsConfiguration.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
+
+    // Prem (begin)
+    streamsConfiguration.put(StreamsConfig.METRICS_RECORDING_LEVEL_CONFIG, "DEBUG");
+    // Prem (end)
     
     // Prem (begin)
     streamsConfiguration.put(CommonClientConfigs.SECURITY_PROTOCOL_CONFIG, "SSL");
