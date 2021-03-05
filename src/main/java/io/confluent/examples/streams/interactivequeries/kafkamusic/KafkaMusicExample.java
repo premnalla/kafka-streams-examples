@@ -183,7 +183,6 @@ public class KafkaMusicExample {
   static final String TOP_FIVE_SONGS_STORE = "top-five-songs";
   static final String TOP_FIVE_KEY = "all";
 
-  private static final String DEFAULT_REST_ENDPOINT_HOSTNAME = "localhost";
   
   // Prem (begin)
   final static String kafkaBootStrap = System.getenv("KAFKA_BOOTSTRAP");
@@ -194,9 +193,11 @@ public class KafkaMusicExample {
   final static String sslTrustStoreLocation = System.getenv("SSL_TRUST_STORE_LOC");
   final static String sslKeyStoreLocation = System.getenv("SSL_KEY_STORE_LOC");
   final static String sslPw = System.getenv("SSL_COMMON_PASSWORD");
+  final static String restIp = System.getenv("REST_IP");
   // Prem (end)
 
   // Prem (begin)
+  private static final String DEFAULT_REST_ENDPOINT_HOSTNAME = restIp;
   private static final String DEFAULT_BOOTSTRAP_SERVERS = kafkaBootStrap;
   private static final String DEFAULT_SCHEMA_REGISTRY_URL = schemaRegUrl;
   // Prem (end)
